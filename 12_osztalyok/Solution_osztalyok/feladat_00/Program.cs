@@ -24,4 +24,4 @@ gun.YearOfProduction = 1982;
 gun.Caliber = "9x19 mm";
 gun.Model = "Glock-18";
 
-Console.Write(gun);
+Console.Write(gun); 
