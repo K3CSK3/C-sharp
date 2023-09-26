@@ -3,8 +3,8 @@
     public string Name;
     public int Age;
     public int Weight;
-    public double? BenchpressAmount;
-    public double? Strength;
+    public double BenchpressAmount;
+    public double Strength;
     public string Rating;
 
     public override string ToString()

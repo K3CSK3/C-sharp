@@ -1,4 +1,6 @@
-﻿Human person1 = new Human();
+﻿using System.Net.Http.Headers;
+
+Human person1 = new Human();
 Console.Write("Please type your name: ");
 person1.Name = Console.ReadLine();
 
@@ -50,3 +52,9 @@ person2.Rating = person2.Strength switch
 };
 
 Console.Write(person2);
+
+if (person1.Strength > person2.Strength)
+{
+    Console.Write($"Between the two {person1.Name} is stronger");
+}
+else Console.Write($"Betwwen the two{person2.Name} is stronger");
