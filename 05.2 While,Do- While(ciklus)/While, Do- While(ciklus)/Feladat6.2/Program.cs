@@ -1,10 +1,10 @@
 ﻿using System.Globalization;
 
-int age;
-bool isNumber;
+int age = 0;
+bool isNumber = false;
 string ageGroup = string.Empty;
 
-do
+while (!isNumber || age < 0 || age > 99)
 {
     Console.Write("Please type your age (between 0 and 99): ");
     string input = Console.ReadLine();
@@ -21,20 +21,23 @@ do
         Console.WriteLine("Input is not within the range");
     }
 
-} while (!isNumber || age < 0 || age > 99);
+}
 
 if (age >= 0 && age <= 6)
 {
     ageGroup = "kid";
 }
+
 else if (age >= 7 && age <= 18)
 {
     ageGroup = "schoolboy";
 }
+
 else if (age >= 19 && age <= 65)
 {
     ageGroup = "worker";
 }
+
 else if (age > 65)
 {
     ageGroup = "retired";

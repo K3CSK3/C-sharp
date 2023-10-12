@@ -1,22 +1,22 @@
 ﻿Random rnd = new Random();
-int evenNumber;
-int oddNumber;
-bool isNumber;
+int evenNumber = 0;
+int oddNumber = 0;
+bool isNumber = false;
 int random;
 double average;
 int canBeSharedWith4 = 0;
 
-do
+while (!isNumber || oddNumber % 2 != 0)
 {
     Console.Write("Please type an odd number: ");
-     string input = Console.ReadLine();
+    string input = Console.ReadLine();
 
-    isNumber = int.TryParse(input, out oddNumber );
+    isNumber = int.TryParse(input, out oddNumber);
 
 }
-while ( !isNumber || oddNumber % 2 != 0);
+isNumber = false;
 
-do
+while (!isNumber || oddNumber % 2 == 0 || oddNumber < evenNumber)
 {
     Console.Write("Please type an even number smaller than the event number: ");
     string input = Console.ReadLine();
@@ -24,15 +24,15 @@ do
     isNumber = int.TryParse(input, out evenNumber);
 
 }
-while (!isNumber || oddNumber % 2 == 0 || oddNumber < evenNumber);
+
 
 random = rnd.Next(evenNumber, oddNumber);
 
-if((random - evenNumber) > (oddNumber - random))
+if ((random - evenNumber) > (oddNumber - random))
 {
     Console.WriteLine($"{random} is further form the odd numbers.");
 }
-else if((random - evenNumber) < (oddNumber - random))
+else if ((random - evenNumber) < (oddNumber - random))
 {
     Console.WriteLine($"A {random} is further form the even numbers");
 }

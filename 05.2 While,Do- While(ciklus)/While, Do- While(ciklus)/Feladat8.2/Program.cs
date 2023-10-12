@@ -1,17 +1,17 @@
 ﻿Console.WriteLine("1 - Fanta\n2 - Coca Cola\n3 - Sprite\n4 - Szentkirályi\n5 - Márka\n6 - Nestea\n7 - gyümölcslé");
 
 int number  = 0;
-bool isNumber;
+bool isNumber  = false;
 string result  = "";
 
-do
+while (!isNumber)
 {
     Console.Write("Please type a number from the list: ");
     string input = Console.ReadLine();
 
     isNumber = int.TryParse(input, out number);
 }
-while (!isNumber);
+
 
 result = number switch
 {

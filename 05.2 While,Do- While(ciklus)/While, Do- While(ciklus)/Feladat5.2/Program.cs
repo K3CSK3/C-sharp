@@ -3,10 +3,10 @@
 int number;
 int sum = 0;
 int numOfInputs = 0;
-int setSum;
-bool isNumber;
+int setSum = 0;
+bool isNumber = false;
 
-do
+while (!isNumber || setSum < 100)
 {
     Console.Write("Please type the sum you want to reach(above 100): ");
     string input = Console.ReadLine();
@@ -17,15 +17,14 @@ do
     {
         Console.WriteLine("Input is not a number");
     }
-} while (!isNumber || setSum < 100);
+}
 
 
-do
+while (!isNumber || sum < setSum)
 {
     numOfInputs++;
     Console.WriteLine("Please type a number: ");
     string input = Console.ReadLine();
-
     number = 0;
     isNumber = int.TryParse(input, new CultureInfo("en-US"), out number);
 
@@ -36,4 +35,4 @@ do
     {
         Console.WriteLine("Input is not a number");
     }
-} while (!isNumber || sum < setSum);
+}

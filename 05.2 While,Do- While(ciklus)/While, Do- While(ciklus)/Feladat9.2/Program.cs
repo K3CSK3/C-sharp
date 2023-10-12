@@ -1,16 +1,16 @@
-﻿int number;
-bool isNumber;
+﻿int number = 0;
+bool isNumber = false;
 
-do
+while (!isNumber || (number < 100 || number > 999))
 {
     Console.Write("Please type a 3 digit number: ");
     string input = Console.ReadLine();
 
-    isNumber = int.TryParse(input, out number );
-    number = Math.Abs( number );
+    isNumber = int.TryParse(input, out number);
+    number = Math.Abs(number);
 
 }
-while ( !isNumber || (number < 100 || number > 999) );
+
 
 if (number % 7 == 0)
 {
