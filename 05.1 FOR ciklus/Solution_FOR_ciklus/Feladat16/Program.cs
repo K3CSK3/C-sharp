@@ -1,8 +1,8 @@
 ﻿bool isNumber;
 int start;
 int end;
-int sum = 0;
-double count = 0;
+int sumOfOdd = 0;
+int sumOfEven = 0;
 double average;
 
 do
@@ -21,9 +21,15 @@ do
 
 for (int i = start; i <= end; i++)
 {
-    count++;
-    sum += i;
+    if (i % 2 == 0)
+    {
+        sumOfEven += i;
+    }
+    else
+    {
+        sumOfOdd += i;
+    }
 }
 
-average = sum/count;
-Console.WriteLine($"The average of the interval {start}-{end} is {average}");
+average = (double)(sumOfOdd + sumOfEven)/2;
+Console.WriteLine($"The average of the sum of odd numbers and sum of even numbers added together in the interval of {start}-{end} is {average}");

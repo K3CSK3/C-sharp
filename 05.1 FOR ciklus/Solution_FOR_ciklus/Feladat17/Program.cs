@@ -1,7 +1,9 @@
 ﻿bool isNumber;
 int start;
 int end;
-int count = 0;
+int sum = 0;
+double count = 0;
+double average;
 
 do
 {
@@ -17,15 +19,11 @@ do
     isNumber = int.TryParse(input, out end);
 } while (!isNumber || end < start);
 
-if (start % 2 == 0)
+for (int i = start; i <= end; i++)
 {
-    start++;
+    count++;
+    sum += i;
 }
-for (int i = start+1; i <= end; i += 2)
-{
-    if (i % 3 == 0)
-    {
-        count++;
-    }
-}
-Console.WriteLine($"In the interval of {start}-{end} there are {count} numbers which are odd and are divisible by 3 ");
+
+average = (double)sum/count;
+Console.WriteLine($"The average of the interval {start}-{end} is {average}");

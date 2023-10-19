@@ -32,13 +32,13 @@ for (int i = start; i <= end; i++)
 
 if (sumOfEven > sumOfOdd)
 {
-    Console.WriteLine($"In the interval of {start}-{end} the sum of even numbers is larger");
+    Console.WriteLine($"In the interval of {start}-{end} the sum of even numbers({sumOfEven}) is larger");
 }
 else if (sumOfEven < sumOfOdd)
 {
-    Console.WriteLine($"In the interval of {start}-{end} the sum of odd numbers is larger");
+    Console.WriteLine($"In the interval of {start}-{end} the sum of odd numbers({sumOfOdd}) is larger");
 }
 else
 {
-    Console.WriteLine($"In the interval of {start}-{end} the sum of odd and even numbers are equal");
+    Console.WriteLine($"In the interval of {start}-{end} the sum of odd and even numbers are equal({sumOfEven};{sumOfOdd})");
 }

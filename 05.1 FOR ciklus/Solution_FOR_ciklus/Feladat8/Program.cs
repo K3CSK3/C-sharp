@@ -18,15 +18,10 @@ do
 
 if (start % 2 == 0)
 {
-    for (int i = start + 1; i <= end; i += 2)
-    {
-        Console.WriteLine(i);
-    }
+    start++;
 }
-else
+
+for (int i = start + 1; i <= end; i += 2)
 {
-    for (int i = start; i <= end; i += 2)
-    {
-        Console.WriteLine(i);
-    }
+    Console.WriteLine(i);
 }

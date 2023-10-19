@@ -1,7 +1,9 @@
 ﻿bool isNumber;
 int start;
 int end;
-int count = 0;
+int sum = 0;
+int a = 1;
+double average;
 
 do
 {
@@ -17,15 +19,10 @@ do
     isNumber = int.TryParse(input, out end);
 } while (!isNumber || end < start);
 
-if (start % 2 == 0)
+for (int i = start; i <= end; i++)
 {
-    start++;
+    sum += i * a;
+    a *= -1;
 }
-for (int i = start+1; i <= end; i += 2)
-{
-    if (i % 3 == 0)
-    {
-        count++;
-    }
-}
-Console.WriteLine($"In the interval of {start}-{end} there are {count} numbers which are odd and are divisible by 3 ");
+
+Console.WriteLine($"By adding every first number and subtracting every second number in the interval of {start}-{end} we get {sum}");

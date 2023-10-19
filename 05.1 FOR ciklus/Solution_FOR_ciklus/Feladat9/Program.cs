@@ -16,17 +16,11 @@ do
     isNumber = int.TryParse(input, out end);
 } while (!isNumber || end > start);
 
-if (start % 2 == 0)
+if (start % 2 == 1)
 {
-    for (int i = start; i >= end; i -= 2)
-    {
-        Console.WriteLine(i);
-    }
+    start++;
 }
-else
+for (int i = start; i >= end; i -= 2)
 {
-    for (int i = start-1; i >= end; i -= 2)
-    {
-        Console.WriteLine(i);
-    }
+    Console.WriteLine(i);
 }

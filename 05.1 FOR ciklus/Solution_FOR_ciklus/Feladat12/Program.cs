@@ -17,11 +17,18 @@ do
     isNumber = int.TryParse(input, out end);
 } while (!isNumber || end < start);
 
-for (int i = start; i <= end; i++)
+if (start % 3 == 1)
 {
-    if (i % 3 == 0)
-    {
-        count++;
-    }
+    start += 2;
+}
+
+if (start % 3 == 2)
+{
+    start++;
+}
+
+for (int i = start; i <= end; i+=3)
+{
+    count++;
 }
 Console.WriteLine($"In the interval of {start}-{end} there are {count} ");
