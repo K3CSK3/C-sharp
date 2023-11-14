@@ -1,15 +1,19 @@
 ﻿int stepAmount;
-bool Isnumber;
+bool isNum;
+
+
 do
 {
     Console.Write("Please type the step amount: ");
     string input = Console.ReadLine();
 
-    Isnumber = int.TryParse(input, out stepAmount);
+    isNum = int.TryParse(input, out stepAmount);
 }
-while (!Isnumber || stepAmount < 1);
+while (!isNum || stepAmount < 1);
+
 
 Console.Clear();
+
 
 for (int i = 0; i <= stepAmount; i++)
 {
