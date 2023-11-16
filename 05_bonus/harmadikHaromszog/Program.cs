@@ -26,14 +26,7 @@ for (int i = -1; i <= stepAmount*2; i+=2)
 
     for (int k = 1; k <= i; k++)
     {
-
-        if (k < 10) {
-            Console.Write($" {k} ");
-        }
-        else {
-            Console.Write($"{k} ");
-        }
-
+        Console.Write($"{k}".PadRight(3, ' '));
     }
     Console.WriteLine();
 }

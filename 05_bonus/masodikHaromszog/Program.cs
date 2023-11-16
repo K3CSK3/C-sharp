@@ -19,14 +19,7 @@ for (int i = stepAmount; i >= 1; i--)
 {
     for (int j = i; j >= 1; j--)
     {
-        if (j < 10)
-        {
-            Console.Write($"  {j} ");
-        }
-        else
-        {
-            Console.Write($" {j} ");
-        }
+        Console.Write($"{j}".PadRight(3, ' '));
     }
     Console.WriteLine();
 }
