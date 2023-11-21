@@ -1,4 +1,5 @@
-﻿namespace IOLibrary;
+﻿using System.Drawing;
+namespace IOLibrary;
 
 
 public static class ExtendedConsole
@@ -15,7 +16,7 @@ public static class ExtendedConsole
             if (!isNumber)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Your didn't type a number");
+                Console.WriteLine("You didn't type a number");
                 Console.ResetColor();
             }
         } while (!isNumber);
@@ -127,5 +128,17 @@ public static class ExtendedConsole
 
         int age = yearNow - birthYear;
         return age;
+    }
+
+    public static Point ReadCoordinate()
+    {
+        Point coordinate = new Point();
+        Console.WriteLine("X value: ");
+        coordinate.X = ExtendedConsole.ReadInteger();
+
+        Console.WriteLine("Y value: ");
+        coordinate.Y = ExtendedConsole.ReadInteger();
+
+        return coordinate;
     }
 }

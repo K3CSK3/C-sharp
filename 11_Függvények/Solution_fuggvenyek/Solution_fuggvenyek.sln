@@ -7,13 +7,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feladat_00", "Feladat_00\Fe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IOLibrary", "IOLibrary\IOLibrary.csproj", "{54C88CAA-31FE-49D2-81FD-BF0450066D05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feladat_01", "Feladat_01\Feladat_01.csproj", "{170E432B-37F5-4447-BE03-7A55E4DAC624}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feladat_01", "Feladat_01\Feladat_01.csproj", "{170E432B-37F5-4447-BE03-7A55E4DAC624}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feladat_02", "Feladat_02\Feladat_02.csproj", "{43545058-B374-437A-A3C2-37D945A31685}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feladat_02", "Feladat_02\Feladat_02.csproj", "{43545058-B374-437A-A3C2-37D945A31685}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feladat_03", "Feladat_03\Feladat_03.csproj", "{902BDE55-5E48-4D8C-875A-3D4F1D209161}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feladat_03", "Feladat_03\Feladat_03.csproj", "{902BDE55-5E48-4D8C-875A-3D4F1D209161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feladat_04", "Feladat_04\Feladat_04.csproj", "{60C7C10D-DD85-48BC-A8D1-91D1AE3F043D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feladat_04", "Feladat_04\Feladat_04.csproj", "{60C7C10D-DD85-48BC-A8D1-91D1AE3F043D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feladat_05", "Feladat_05\Feladat_05.csproj", "{4E53F229-54C5-43CA-85E6-6F471991D5A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomLibrary", "CustomLibrary\CustomLibrary.csproj", "{E6ABE744-D752-4E38-8E89-E02218291D1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feladat_06", "Feladat_06\Feladat_06.csproj", "{C3FB01E5-BD76-4319-8B38-0A18EB20C3C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feladat_08", "Feladat_08\Feladat_08.csproj", "{76C47A32-EADE-480F-BFD2-F57F8A42EE10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +53,22 @@ Global
 		{60C7C10D-DD85-48BC-A8D1-91D1AE3F043D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60C7C10D-DD85-48BC-A8D1-91D1AE3F043D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60C7C10D-DD85-48BC-A8D1-91D1AE3F043D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E53F229-54C5-43CA-85E6-6F471991D5A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E53F229-54C5-43CA-85E6-6F471991D5A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E53F229-54C5-43CA-85E6-6F471991D5A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E53F229-54C5-43CA-85E6-6F471991D5A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6ABE744-D752-4E38-8E89-E02218291D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6ABE744-D752-4E38-8E89-E02218291D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6ABE744-D752-4E38-8E89-E02218291D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6ABE744-D752-4E38-8E89-E02218291D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3FB01E5-BD76-4319-8B38-0A18EB20C3C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3FB01E5-BD76-4319-8B38-0A18EB20C3C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3FB01E5-BD76-4319-8B38-0A18EB20C3C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3FB01E5-BD76-4319-8B38-0A18EB20C3C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76C47A32-EADE-480F-BFD2-F57F8A42EE10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C47A32-EADE-480F-BFD2-F57F8A42EE10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C47A32-EADE-480F-BFD2-F57F8A42EE10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C47A32-EADE-480F-BFD2-F57F8A42EE10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
