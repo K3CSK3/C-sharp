@@ -1,4 +1,6 @@
-﻿namespace System;
+﻿using System.ComponentModel.Design;
+
+namespace System;
 
 public static class SystemExtensions
 {
@@ -37,5 +39,25 @@ public static class SystemExtensions
         Console.ForegroundColor = (ConsoleColor)lenght;
         Console.Write(text);
         Console.ResetColor();
+    }
+
+    public static double ConvertToEUR(double baseMoney, string convType)
+    {
+        if (convType == "JPY") 
+        {
+            return baseMoney * 0.0061;
+        }
+        else if (convType == "USD") 
+        {
+            return baseMoney * 0.92;
+        }
+        else if (convType == "CHF") 
+        {
+            return baseMoney * 1.04;
+        }
+        else
+        {
+            return baseMoney;
+        }
     }
 }
