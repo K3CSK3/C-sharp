@@ -8,8 +8,10 @@ double propertyLength = ExtendedConsole.ReadDouble();
 
 double propertyArea = propertyWidth * propertyLength;
 
-double tax = propertyWidth < 20 && propertyLength < 30 ? CalculateTax(propertyArea) * 0.75 : CalculateTax(propertyArea);
+double tax = propertyWidth < 20 && propertyLength < 30 ?
+             CalculateTax(propertyArea, 25) :
+             CalculateTax(propertyArea);
 
-Console.WriteLine($"The tax for your property is: {tax:F2}");
+Console.WriteLine($"The tax for your property is: {tax:F2}Ft");
 
-double CalculateTax(double area) => area * 1000;
+static double CalculateTax(double area, double discount = 0) => area * 1000 * ((100 - discount)/100);
