@@ -30,7 +30,8 @@ Console.WriteLine($"The sum of odd numbers in the array is: {oddNumberSum}");
 int zeroEndNumbers = array.Count(x => x % 10 == 0);
 Console.WriteLine($"There are {zeroEndNumbers} numbers ending in zero");
 
-int[] orderedArray = ArrayOrderer(array);
+ArrayOrderer(array);
+WriteIntArrayToConsole(array);
 
 async Task<int[]> GetIntArrayAsync(int arraySize)
 {
@@ -96,13 +97,17 @@ int OddNumbersSum(int[] array)
 
 void ArrayOrderer(int[] array, string order = "normal")
 {
-    int temp = 0;
-
     for (int i = 0; i < array.Length - 1; i++)
     {
-        for (int j = 0; i < array.Length - 1; j++)
+        int temp = 0;
+        for (int j = 0; j < array.Length; j++)
         {
-            if (array[i] < array[j])
+            if (array[i] > array[j])
+            {
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
         }
     }
 }
