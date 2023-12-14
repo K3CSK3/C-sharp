@@ -7,11 +7,14 @@ Console.WriteLine("Weekly Expenses:");
 WriteWeeklyExpenses(expenses);
 
 int weeklyExpenseSum = expenses.Sum(dailyExpense => dailyExpense.Expense);
-Console.WriteLine($"Total Expenses:   {weeklyExpenseSum}Ft");
+Console.WriteLine($"Total Expenses:{weeklyExpenseSum.ToString().PadLeft(8)}Ft");
 
 DailyExpense leastExpensiveDay = GetLeastExpensiveDay(expenses);
-Console.WriteLine($"Least Expensive day of the week:");
-Console.WriteLine(leastExpensiveDay+"Ft");
+Console.WriteLine($"Least Expensive day of the week: ");
+Console.WriteLine(leastExpensiveDay+" Ft");
+
+bool expenseWas10000 = expenses.Any(x => x.Expense == 10000);
+Console.WriteLine($"{(expenseWas10000 ? "There was" : "There wasn't")} a day with 10.000 Ft of spending");
 
 DailyExpense[] GetDailyExpenses()
 {
@@ -35,7 +38,7 @@ void WriteWeeklyExpenses(DailyExpense[] expenses)
 {
     foreach (var expense in expenses)
     {
-        Console.WriteLine(expense+"Ft");
+        Console.WriteLine(expense+" Ft");
     }
 
 }

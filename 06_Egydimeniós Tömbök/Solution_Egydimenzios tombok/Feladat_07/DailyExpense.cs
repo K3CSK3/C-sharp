@@ -17,6 +17,6 @@
 
     public override string ToString()
     {
-        return $"{this.Day.ToString().PadLeft(9)} => {this.Expense.ToString().PadLeft(9)}";
+        return $"{this.Day.ToString().PadLeft(9)} =>  {this.Expense.ToString().PadLeft(9)}";
     }
 }
