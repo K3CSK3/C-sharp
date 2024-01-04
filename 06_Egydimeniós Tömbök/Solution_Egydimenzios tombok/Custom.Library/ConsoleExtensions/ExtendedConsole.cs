@@ -145,7 +145,7 @@ public static class ExtendedConsole
 
 
 
-    public static int ReadInteger(string prompt)
+    public static int ReadInteger(string prompt, int minValue, int maxValue = int.MaxValue)
     {
         bool isNumber;
         int number;
@@ -162,7 +162,7 @@ public static class ExtendedConsole
                 Console.WriteLine("You didn't type a number");
                 Console.ResetColor();
             }
-        } while (!isNumber);
+        } while (!isNumber && (number >= minValue && number <= maxValue));
 
         return number;
     }

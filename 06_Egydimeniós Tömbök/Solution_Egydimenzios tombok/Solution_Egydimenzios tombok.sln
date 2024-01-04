@@ -5,13 +5,15 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Custom.Library", "Custom.Library\Custom.Library.csproj", "{9524690B-F961-4FD7-96FD-FD7E645853F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feladat_01", "Feladat_01\Feladat_01.csproj", "{D01D1577-9786-4033-A9F6-7628E24318AE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feladat_04", "Feladat_04\Feladat_04.csproj", "{A6BCC036-925B-487D-836B-F148F89AA8FF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feladat_07", "Feladat_07\Feladat_07.csproj", "{FACCCEF2-FA35-4DDF-9FBE-4E0A10002997}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feladat_06", "Feladat_06\Feladat_06.csproj", "{1CD792E6-F938-4543-B8AF-DC19B949238E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feladat_06", "Feladat_06\Feladat_06.csproj", "{1CD792E6-F938-4543-B8AF-DC19B949238E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feladat_00", "Feladat_00\Feladat_00.csproj", "{8500ACDF-6FE6-406A-94DB-6B6497EBBAF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feladat_01", "Feladat_01\Feladat_01.csproj", "{956A3733-DADB-466C-8ECE-83295B0AA974}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +25,6 @@ Global
 		{9524690B-F961-4FD7-96FD-FD7E645853F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9524690B-F961-4FD7-96FD-FD7E645853F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9524690B-F961-4FD7-96FD-FD7E645853F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D01D1577-9786-4033-A9F6-7628E24318AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D01D1577-9786-4033-A9F6-7628E24318AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D01D1577-9786-4033-A9F6-7628E24318AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D01D1577-9786-4033-A9F6-7628E24318AE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A6BCC036-925B-487D-836B-F148F89AA8FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A6BCC036-925B-487D-836B-F148F89AA8FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6BCC036-925B-487D-836B-F148F89AA8FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +37,14 @@ Global
 		{1CD792E6-F938-4543-B8AF-DC19B949238E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CD792E6-F938-4543-B8AF-DC19B949238E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CD792E6-F938-4543-B8AF-DC19B949238E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8500ACDF-6FE6-406A-94DB-6B6497EBBAF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8500ACDF-6FE6-406A-94DB-6B6497EBBAF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8500ACDF-6FE6-406A-94DB-6B6497EBBAF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8500ACDF-6FE6-406A-94DB-6B6497EBBAF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{956A3733-DADB-466C-8ECE-83295B0AA974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{956A3733-DADB-466C-8ECE-83295B0AA974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{956A3733-DADB-466C-8ECE-83295B0AA974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{956A3733-DADB-466C-8ECE-83295B0AA974}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

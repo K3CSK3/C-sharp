@@ -25,7 +25,7 @@ Player[] GetPlayers()
     for (int i = 0; i < 9; i++)
     {
         string name = ExtendedConsole.ReadName("Please type the name of the player: ");
-        int goals = ExtendedConsole.ReadInteger($"Please type the amount of goals {name} scored: ");
+        int goals = ExtendedConsole.ReadInteger($"Please type the amount of goals {name} scored: ", 0);
 
         players[i] = new Player(goals, name);
     }

@@ -1,113 +1,76 @@
-﻿using System.Runtime.ExceptionServices;
+﻿using IOLibrary;
 
-Random rnd = new Random();
+const int NUMBER_OF_CARS = 2;
 
-int[] array = await GetIntArrayAsync(10);
+Driver[] drivers = GetDrivers();
 
-WriteIntArrayToConsole(array, "reverse");
+WriteArrayToConsole(drivers);
 
-int arraySum = GetArraySum(array);
+int sumOfFines = drivers.Sum(driver => driver.Fine);
+Console.WriteLine($"The summary of all fines is : {sumOfFines}");
 
-Console.WriteLine($"Summary of the numbers this array is {arraySum}");
+Driver fastestDriver = GetFastestDriver(drivers);
+Console.WriteLine($"The fastest car was: {fastestDriver.LicenceNumber} with a speed of {fastestDriver.Speed}");
 
-double average = (double)arraySum / array.Length;
-Console.WriteLine($"The average of the numbers in the array is {average}");
+int nonSpeedingDrivers = GetNonSpeedingDriversNumber(drivers);
+double percentage = ((double)nonSpeedingDrivers /NUMBER_OF_CARS) * 100;
+Console.WriteLine($"There were {nonSpeedingDrivers} drivers who didn't break the speed limit that is {percentage:F2}%");
 
-int[] evenNumberArray = GetEvenNumbersInArray(array);
-Console.WriteLine("Even numbers in the array:");
-WriteIntArrayToConsole(evenNumberArray);
+bool driverAt60 = drivers.Any(driver => driver.Speed == 60);
+Console.WriteLine($"There {(driverAt60 ? "were" : "weren't")} drivers who went with 60 km/h\" :");
 
-int doubleDigitNumbers = GetEvenDoubleDigitNumbersInArray(array);
-Console.WriteLine($"There are {doubleDigitNumbers} double digit numbers in the array");
 
-int[] singleDigitNumbers = GetSingleDigitNumbers(array);
-Console.WriteLine($"Single digit numbers in array:");
-WriteIntArrayToConsole(singleDigitNumbers);
-
-int oddNumberSum = OddNumbersSum(array);
-Console.WriteLine($"The sum of odd numbers in the array is: {oddNumberSum}");
-
-int zeroEndNumbers = array.Count(x => x % 10 == 0);
-Console.WriteLine($"There are {zeroEndNumbers} numbers ending in zero");
-
-ArrayOrderer(array);
-WriteIntArrayToConsole(array);
-
-async Task<int[]> GetIntArrayAsync(int arraySize)
+Driver[] GetDrivers()
 {
-    int[] array = new int[arraySize];
+    Driver[] drivers = new Driver[NUMBER_OF_CARS];
 
-    for (int i = 0 ; i < arraySize; i++)
+    for (int i = 0; i < NUMBER_OF_CARS; i++)
     {
-        array[i] = rnd.Next(0, 100);
-        await Task.Delay(100);
-    }
+        string licence = ExtendedConsole.ReadString("Please type the car's licence plate number: ");
+        int speed = ExtendedConsole.ReadInteger("Please type the car's speed: ", 1, 531);
+        int fine = GetFine(speed);
 
-    return array;
+        Driver driver = new Driver(licence, speed, fine);
+
+        drivers[i] = driver;
+    }
+    return drivers;
 }
 
-void WriteIntArrayToConsole(int[] array, string order="normal")
+void WriteArrayToConsole(Driver[] drivers)
 {
-    if (order == "reverse")
+    foreach (Driver driver in drivers)
     {
-        for (int i = array.Length - 1; i >= 0; i--)
-        {
-            Console.WriteLine($"[{i+1}] = {array[i]}");
-        }
-    }
-    else if (order == "normal")
-    {
-        for (int i = 0; i <= array.Length - 1; i++)
-        {
-            Console.WriteLine($"[{i + 1}] = {array[i]}");
-        }
+        Console.WriteLine(driver);
     }
 }
 
-int GetArraySum(int[] array) // => array.Sum(x => x)
+
+int GetNonSpeedingDriversNumber(Driver[] drivers)
 {
-    int sum = 0;
-
-    foreach (int item in array)
-    {
-        sum += item;
-    }
-
-    return sum;
+    int nonSpeeding = drivers.Count(nonSpeeding => nonSpeeding.Speed < 90);
+    return nonSpeeding;
 }
 
-int[] GetEvenNumbersInArray(int[] array) => array.Where(x => x % 2 == 0).ToArray();
-
-int GetEvenDoubleDigitNumbersInArray(int[] array) => array.Count( x => x > 9 && x < 100);
-
-int[] GetSingleDigitNumbers(int[] array) => array.Where(x => x < 10).ToArray();
-
-int OddNumbersSum(int[] array)
+Driver GetFastestDriver(Driver[] drivers)
 {
-    int arraySum = 0;
-    foreach (int item in array)
-    {
-        if (item % 2 == 1)
-        {
-            arraySum += 1;
-        }
-    }
-    return arraySum;
+    int fastestSpeed = drivers.Max(driver => driver.Speed);
+    Driver fastestCar = drivers.First(driver => driver.Speed == fastestSpeed);
+
+    return fastestCar;
 }
 
-void ArrayOrderer(int[] array, string order = "normal")
+int GetFine(int speed)
 {
-    for (int i = 0; i < array.Length - 1; i++)
+    switch (speed)
     {
-        int temp = 0;
-        for (int j = 0; j < array.Length; j++)
-        {
-            if (array[i] > array[j])
-            {
-                temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
-            }
-        }
+        case > 110:
+            return 30000;
+        case > 101:
+            return 20000;
+        case > 91:
+            return 10000;
+        default:
+            return 0;
     }
 }
