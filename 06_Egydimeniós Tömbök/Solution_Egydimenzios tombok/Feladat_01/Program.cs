@@ -1,6 +1,6 @@
 ﻿using IOLibrary;
 
-const int NUMBER_OF_CARS = 2;
+const int NUMBER_OF_CARS = 10;
 
 Driver[] drivers = GetDrivers();
 

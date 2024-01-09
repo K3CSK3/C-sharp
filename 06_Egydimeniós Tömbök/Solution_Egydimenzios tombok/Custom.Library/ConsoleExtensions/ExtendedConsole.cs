@@ -152,7 +152,7 @@ public static class ExtendedConsole
 
         do
         {
-            Console.WriteLine(prompt);
+            Console.Write(prompt);
             string text = Console.ReadLine();
             isNumber = int.TryParse(text, out number);
 
@@ -162,19 +162,19 @@ public static class ExtendedConsole
                 Console.WriteLine("You didn't type a number");
                 Console.ResetColor();
             }
-        } while (!isNumber && (number >= minValue && number <= maxValue));
+        } while (!isNumber || !(number >= minValue && number <= maxValue));
 
         return number;
     }
 
-    public static double ReadDouble(string prompt)
+    public static double ReadDouble(string prompt, int minValue, int maxValue = int.MaxValue)
     {
         bool isNumber;
         double number;
 
         do
         {
-            Console.WriteLine(prompt);
+            Console.Write(prompt);
             string text = Console.ReadLine().Replace(',', '.');
             isNumber = double.TryParse(text, new CultureInfo("en-US"), out number);
 
@@ -184,7 +184,7 @@ public static class ExtendedConsole
                 Console.WriteLine("You didn't type a floating point number!");
                 Console.ResetColor();
             }
-        } while (!isNumber);
+        } while (!isNumber || !(number >= minValue && number <= maxValue));
 
         return number;
     }
@@ -195,7 +195,7 @@ public static class ExtendedConsole
 
         do
         {
-            Console.WriteLine(prompt);
+            Console.Write(prompt);
             text = Console.ReadLine().Trim();
 
             if (string.IsNullOrWhiteSpace(text))
@@ -215,7 +215,7 @@ public static class ExtendedConsole
 
         do
         {
-            Console.WriteLine(prompt);
+            Console.Write(prompt);
             name = Console.ReadLine().Trim();
 
 
@@ -241,7 +241,7 @@ public static class ExtendedConsole
         int yearNow = DateTime.Now.Year;
         do
         {
-            Console.WriteLine(prompt);
+            Console.Write(prompt);
             birthYear = ReadInteger();
 
             if (birthYear > yearNow)
