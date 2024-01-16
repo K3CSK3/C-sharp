@@ -1,6 +1,6 @@
 ﻿using IOLibrary;
 
-const int NUMBER_OF_FRUITS = 3;
+const int NUMBER_OF_FRUITS = 10;
 
 Fruit[] fruits = GetFruits();
 
@@ -27,17 +27,18 @@ Fruit[] over1500Ft = fruits.Where(x => x.Price > 1500).ToArray();
 WriteArrayToConsole(over1500Ft);
 
 Fruit[] GetFruits() {
-for (int i = 0; i < NUMBER_OF_FRUITS; i++) 
-    {
-        string name = ExtendedConsole.ReadString("Please type the fruits name: ");
-        double weight = ExtendedConsole.ReadInteger("Please type the weight of the fruit: ", 1);
-        double price = ExtendedConsole.ReadDouble("Please type the price (Ft/kg): ", 1);
+    Fruit[] fruits = new Fruit[NUMBER_OF_FRUITS];
+    for (int i = 0; i < NUMBER_OF_FRUITS; i++) 
+        {
+            string name = ExtendedConsole.ReadString("Please type the fruits name: ");
+            double weight = ExtendedConsole.ReadInteger("Please type the weight of the fruit: ", 1);
+            double price = ExtendedConsole.ReadDouble("Please type the price (Ft/kg): ", 1);
 
-        Fruit fruit = new Fruit(name, weight, price);
+            Fruit fruit = new Fruit(name, weight, price);
 
-        fruits[i] = fruit;
-    }
-    return fruits;
+            fruits[i] = fruit;
+        }
+        return fruits;
 }
 
 void WriteIndividualPrice(Fruit[] fruits)
@@ -48,10 +49,10 @@ void WriteIndividualPrice(Fruit[] fruits)
     }
 }
 
-void WriteArrayToConsole(Fruit[] drivers)
+void WriteArrayToConsole(Fruit[] fruits)
 {
-    foreach (Fruit driver in drivers)
+    foreach (Fruit fruit in fruits)
     {
-        Console.WriteLine(driver);
+        Console.WriteLine(fruit);
     }
 }

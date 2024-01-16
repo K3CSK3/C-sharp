@@ -9,8 +9,8 @@ WritePlayerToConsole(players);
 double averageAmountOfGoals = players.Average(x => x.GoalNum);
 
 Console.WriteLine("\nPlayers completing below average :");
-Player[] playersBelowAvarage = players.Where(player => player.GoalNum < averageAmountOfGoals).ToArray();
-WritePlayerToConsole(playersBelowAvarage);
+Player[] playersBelowAverage = players.Where(player => player.GoalNum < averageAmountOfGoals).ToArray();
+WritePlayerToConsole(playersBelowAverage);
 
 int playersAboveAverage = players.Count(x => x.GoalNum > averageAmountOfGoals);
 Console.WriteLine($"{playersAboveAverage} players scored above average");
