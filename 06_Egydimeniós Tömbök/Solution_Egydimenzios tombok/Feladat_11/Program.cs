@@ -8,29 +8,31 @@ Console.Clear();
 
 WriteArrayToConsole(trucks);
 
-double sumOfWeight = trucks.Sum(x => x.Weight);
-Console.WriteLine($"Summary of all weight: {sumOfWeight}");
+
+double sumOfWeight = trucks.Sum(truck => truck.Weight);
+Console.WriteLine($"\nSummary of all weight: {sumOfWeight}");
 
 
-double averageOfWeight = trucks.Average(x => x.Weight);
-Console.WriteLine($"Average of all weight: {averageOfWeight}");
+double averageOfWeight = trucks.Average(truck => truck.Weight);
+Console.WriteLine($"\nAverage of all weight: {averageOfWeight}");
 
 
-double mostWeight = trucks.Max(x => x.Weight);
-Truck heaviestTruck = trucks.First(x => x.Weight == mostWeight);
-Console.WriteLine($"Heaviest truck: {heaviestTruck}");
+double mostWeight = trucks.Max(truck => truck.Weight);
+Truck heaviestTruck = trucks.First(truck => truck.Weight == mostWeight);
+Console.WriteLine($"\nHeaviest truck: {heaviestTruck}");
 
 
-bool measured10T = trucks.Any(x => x.Weight == 10);
-Console.WriteLine($"There {(measured10T?"were":"weren't")} any trucks measured to be 10 tonnes");
+bool measured10T = trucks.Any(truck => truck.Weight == 10);
+Console.WriteLine($"\nThere {(measured10T?"were":"weren't")} trucks measured to be 10 tonnes");
 
 
-Truck[] moreThan10T = trucks.Where(x => x.Weight > 10).ToArray();
+Truck[] moreThan10T = trucks.Where(truck => truck.Weight > 10).ToArray();
+Console.WriteLine("\nTruck weighing more than 10 tonnes:");
 WriteLicense(moreThan10T);
 
 
 int lightestTruckPlace = LightestTruckNum(trucks);
-Console.WriteLine($"The lightest measured truck was the {lightestTruckPlace}. in the row");
+Console.WriteLine($"\nThe lightest measured truck was the {lightestTruckPlace}. in the row");
 
 Truck[] GetTrucks()
 {
@@ -50,7 +52,7 @@ Truck[] GetTrucks()
 int LightestTruckNum(Truck[] trucks)
 {
     int counter = 0;
-    double lightest = trucks.Min(x => x.Weight);
+    double lightest = trucks.Min(truck => truck.Weight);
     foreach (Truck truck in trucks)
     {
         counter++;

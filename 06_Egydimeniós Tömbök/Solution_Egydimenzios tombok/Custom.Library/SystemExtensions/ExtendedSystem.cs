@@ -58,4 +58,12 @@ public static class ExtendedSystem
             return baseMoney;
         }
     }
+
+    public static void WriteArrayToConsole(ICollection<object> items)
+    {
+        foreach (object item in items)
+        {
+            Console.WriteLine(item.ToString());
+        }
+    }
 }

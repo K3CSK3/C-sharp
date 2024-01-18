@@ -11,6 +11,6 @@
 
     public override string ToString()
     {
-        return $"Truck {this.LicensePlate} weighed {this.Weight} tonnes";
+        return $"Truck {this.LicensePlate} weighed at {this.Weight} tonnes";
     }
 }
