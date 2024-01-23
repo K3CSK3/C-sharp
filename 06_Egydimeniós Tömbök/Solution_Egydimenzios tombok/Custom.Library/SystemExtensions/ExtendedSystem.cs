@@ -1,4 +1,7 @@
-﻿namespace System;
+﻿using System.Runtime.CompilerServices;
+using System.Transactions;
+
+namespace System;
 
 public static class ExtendedSystem
 {
@@ -63,7 +66,18 @@ public static class ExtendedSystem
     {
         foreach (object item in items)
         {
+            if (item != null)
+            {
             Console.WriteLine(item.ToString());
+            }
         }
+    }
+
+    public static void WriteTimeFormat(double lengthInSeconds)
+    {
+        double minutes = lengthInSeconds / 60;
+        double seconds = lengthInSeconds % 60;
+
+        Console.Write($"{minutes:F0}:{seconds:F0}");
     }
 }

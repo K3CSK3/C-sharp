@@ -1,5 +1,4 @@
 ﻿using IOLibrary;
-using System.Threading.Channels;
 
 const int NUMBER_OF_SONGS = 10;
 
@@ -13,7 +12,8 @@ Console.WriteLine($"\nThe total length of the disc is {totalLength/60} minutes")
 
 
 double averageLength = songs.Average(song => song.Length);
-Console.WriteLine($"\nThe average length of a song on the disc is {(averageLength/60):F0}:{(averageLength % 60):F0}");
+Console.WriteLine($"\nThe average length of a song on the disc is ");
+ExtendedSystem.WriteTimeFormat(averageLength);
 
 
 int shortestSongLength = songs.Min(song => song.Length);
@@ -34,8 +34,8 @@ Console.WriteLine($"\nThere {((sameLengthSongsAmount == 0) ? "aren't" : "are")} 
 
 if (sameLengthSongsAmount != 0)
 {
-    Song[] sameLen = SameLengthSongNames(sameLengthSongsAmount, songs);
-    //ExtendedSystem.WriteArrayToConsole(sameLen);
+    Song[] sameLen = SameLengthSongNames(songs);
+    ExtendedSystem.WriteArrayToConsole(sameLen);
 }
 
 int SameLengthSongs(Song[] songs)
@@ -48,17 +48,19 @@ int SameLengthSongs(Song[] songs)
     return counter;
 }
 
-Song[] SameLengthSongNames(int number, Song[] songs)
+Song[] SameLengthSongNames(Song[] songs)
 {
-    Song[] sameLen = new Song[number];
-    for (int i = 0; i<number; i++)
+    int index = -1;
+    int numberOfSameLengthSongs = SameLengthSongs(songs);
+    Song[] sameLen = new Song[numberOfSameLengthSongs*2];
+    for (int i = 0; i<NUMBER_OF_SONGS-1; i++)
     {
-        for (int j = 0; j<number; j++)
+        for (int j = i+1; j<NUMBER_OF_SONGS; j++)
         {
-            if ((songs[i].Length == songs[j].Length) && (i != j))
+            if (songs[i].Length == songs[j].Length)
             {
-                sameLen[i] = songs[j];
-                Console.WriteLine(sameLen[i].Length);
+                sameLen[++index] = songs[i];
+                sameLen[++index] = songs[j];
             }
         }
     }    
@@ -72,8 +74,8 @@ Song[] GetSongs()
 
     for (int i = 0; i < NUMBER_OF_SONGS; i++)
     {
-        string name = "a"; //ExtendedConsole.ReadString("Please type the song\'s name: ");
-        int length = rnd.Next(30, 51);
+        string name = ExtendedConsole.ReadString("Please type the song\'s name: ");
+        int length = rnd.Next(30, 501);
         songs[i] = new Song(name, length, i + 1);
     }
     return songs;
