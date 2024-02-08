@@ -1,4 +1,4 @@
-﻿using System.Text.Encodings.Web;
+﻿﻿using System.Text.Encodings.Web;
 using System.Text.Json;
 
 public class Motorcycle
@@ -7,37 +7,37 @@ public class Motorcycle
     /// Gyártó
     /// </summary>
     public string Brand { get; set; }
-
+    
     /// <summary>
     /// Moell
     /// </summary>
     public string Model { get; set; }
-
+    
     /// <summary>
     /// Becenév
     /// </summary>
     public string Nickname { get; set; } = string.Empty;
-
+    
     /// <summary>
     /// Megjelenési év
     /// </summary>
     public int ReleaseYear { get; set; }
-
+    
     /// <summary>
     /// Köbcenti
     /// </summary>
     public int Cubic { get; set; }
-
+    
     /// <summary>
     /// Teljesítmény kW-ban
     /// </summary>
     public int KW { get; set; }
-
+    
     /// <summary>
     /// Kategória
     /// </summary>
     public string Category { get; set; }
-
+    
     /// <summary>
     /// Max sebesség
     /// </summary>
