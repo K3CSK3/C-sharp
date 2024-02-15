@@ -9,7 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="output\" />
     <Folder Include="source\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Custom.Library\Custom.Library.csproj" />
   </ItemGroup>
 
   <ItemGroup>
