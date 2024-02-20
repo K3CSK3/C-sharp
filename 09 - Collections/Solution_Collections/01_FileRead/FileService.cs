@@ -1,6 +1,4 @@
-﻿using System.Xml.Schema;
-
-public static class FileService
+﻿public static class FileService
 {
 
     #region FileReading

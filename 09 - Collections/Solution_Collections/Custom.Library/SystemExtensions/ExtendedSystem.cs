@@ -68,7 +68,17 @@ public static class ExtendedSystem
         {
             if (item != null)
             {
-            Console.WriteLine(item.ToString());
+            Console.WriteLine($"{item}");
+            }
+        }
+    }
+    public static void WriteCollectionToConsole<T>(this ICollection<T> collectionToDisplay)
+    {
+        foreach (object item in collectionToDisplay)
+        {
+            if (item != null)
+            {
+                Console.WriteLine($"{item}");
             }
         }
     }
@@ -80,4 +90,5 @@ public static class ExtendedSystem
 
         Console.Write($"{minutes:F0}:{seconds:F0}");
     }
+
 }

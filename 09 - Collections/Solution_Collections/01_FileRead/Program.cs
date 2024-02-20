@@ -30,3 +30,17 @@ Console.WriteLine($"There {(students.Any(x => x.Average == 5) ? "were" : "weren'
 	- jeles, ha: 4.00 - 4.99
 	- kitünő, ha: 5.00
  */
+Dictionary<string, int> sumOfRatings = DataService.GetSumOfRatings(students);
+sumOfRatings.WriteCollectionToConsole();
+
+/*
+ Dictionary<Grade, int> gradesCount = new Dictionary<Grade, int>()
+{
+	[Grade.Elegtelen = student.Count(x=> x.Grade == Grade.Elegtelen)]
+	[Grade.Elegseges = student.Count(x=> x.Grade == Grade.Elegseges)]
+	[Grade.Kozepes = student.Count(x=> x.Grade == Grade.Kozepes)]
+	[Grade.Jo = student.Count(x=> x.Grade == Grade.Jo)]
+	[Grade.Jeles = student.Count(x=> x.Grade == Grade.Jeles)]
+	[Grade.Kituno = student.Count(x=> x.Grade == Grade.Kituno)]
+}
+ */
