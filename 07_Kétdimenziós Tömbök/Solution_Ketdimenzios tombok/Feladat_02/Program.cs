@@ -19,7 +19,7 @@ for (int i = 0; i < MATRIX_SIZE; i++)
     Console.WriteLine();
 }
 
-int sum = 0;
+List<int> otherDiagonal = new List<int>();
 
 for (int i = 0; i < MATRIX_SIZE; i++)
 {
@@ -27,9 +27,12 @@ for (int i = 0; i < MATRIX_SIZE; i++)
     {
         if ((i + j) == (MATRIX_SIZE - 1))
         {
-            sum += (i + 1) * (j + 1);
+            otherDiagonal.Add((i + 1) * (j + 1));
         }
     }
 }
 
-Console.WriteLine($"Sum of other diagonal {sum}");
+foreach (int number in otherDiagonal)
+{
+    Console.Write($"{number},");
+}
