@@ -20,18 +20,20 @@ for (int i = 0; i < MATRIX_SIZE; i++)
 }
 
 int sum = 0;
+int smallest = int.MaxValue;
 
 for (int i = 0; i < MATRIX_SIZE; i++)
 {
     for (int j = 0; j < MATRIX_SIZE; j++)
     {
-        if (j > i)
+        if ((MATRIX_SIZE - i) < j)
         {
-            Console.Write(matrix[i, j].PadLeft(4, ' '));
-        }
-        else
-        {
-            Console.Write(" ".PadLeft(4, ' '));
+            if (matrix[i, j] < smallest)
+            {
+                smallest = matrix[i, j];
+            }
         }
     }
 }
+
+Console.WriteLine($"Sum of other diagonal {smallest}");
