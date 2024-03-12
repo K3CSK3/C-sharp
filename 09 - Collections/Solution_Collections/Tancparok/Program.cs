@@ -46,8 +46,8 @@ int maleMax = malesAndCount.Max(x => x.Value);
 int femaleMax = femalesAndCount.Max(x => x.Value);
 
 
-List<string> mostParticipatingMales = GetMostParticipating(malesAndCount);
-List<string> mostParticipatingFemales = GetMostParticipating(femalesAndCount);
+List<string> mostParticipatingMales = GetMostParticipating(malesAndCount, maleMax);
+List<string> mostParticipatingFemales = GetMostParticipating(femalesAndCount, femaleMax);
 
 
 Console.WriteLine();
@@ -57,12 +57,12 @@ mostParticipatingMales.ForEach(x => Console.WriteLine($"{x} {malesAndCount[x]}")
 
 
 
-List<string> GetMostParticipating(Dictionary<string, int> namesAndCount)
+List<string> GetMostParticipating(Dictionary<string, int> namesAndCount, int max)
 {
     List<string> mostParticipating = new List<string>();
     foreach (var item in namesAndCount)
     {
-        if (item.Value == maleMax)
+        if (item.Value == max)
         {
             mostParticipating.Add(item.Key);
         }
