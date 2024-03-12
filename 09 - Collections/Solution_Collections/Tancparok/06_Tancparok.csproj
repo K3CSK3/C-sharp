@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\06_Egydimeniós Tömbök\Solution_Egydimenzios tombok\Custom.Library\Custom.Library.csproj" />
+    <None Update="source\tancrend.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

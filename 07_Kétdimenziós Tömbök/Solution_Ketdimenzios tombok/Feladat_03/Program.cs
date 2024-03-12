@@ -19,6 +19,8 @@ for (int i = 0; i < MATRIX_SIZE; i++)
     Console.WriteLine();
 }
 
+Console.WriteLine();
+
 int sum = 0;
 
 for (int i = 0; i < MATRIX_SIZE; i++)
@@ -27,11 +29,12 @@ for (int i = 0; i < MATRIX_SIZE; i++)
     {
         if (j > i)
         {
-            Console.Write(matrix[i, j].PadLeft(4, ' '));
+            Console.Write(matrix[i, j].ToString().PadLeft(4, ' '));
         }
         else
         {
             Console.Write(" ".PadLeft(4, ' '));
         }
     }
+    Console.WriteLine();
 }

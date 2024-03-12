@@ -7,12 +7,12 @@ double[,] weatherData = GetData();
 WriteToConsole(weatherData);
 
 double[] averageRainAmount = OrderDailyAvg(weatherData);
-Console.WriteLine("\n1. Feladat:");
-WriteToConsole(averageRainAmount);
+Console.WriteLine("\nÁtlagos eső mennyisége:");
+WriteArray(averageRainAmount);
 
 string leastRain = GetLeastRainyDay(weatherData);
 string mostRain = GetRainiestDay(weatherData);
-Console.WriteLine($"\n{leastRain} esett a legkevesebb, {bestDay} esett a legtöbb csapadék");
+Console.WriteLine($"\n{leastRain} esett a legkevesebb, {mostRain} esett a legtöbb csapadék");
 
 string dayWithTheLargestAmountOfMorningRain = GetRainiestMorning(weatherData);
 Console.WriteLine($"\n{dayWithTheLargestAmountOfMorningRain} esett a legtöbb eső reggel");
@@ -33,7 +33,7 @@ double[,] GetData()
         {
             temp = random.Next(10, 100);
             result = random.Next(0, 5) + (double)temp / (double)100;
-            result = int.Parse($"{result:F2}");
+            result = double.Parse($"{result:F2}");
             results[i, j] = result;
             if (j == 3)
             {

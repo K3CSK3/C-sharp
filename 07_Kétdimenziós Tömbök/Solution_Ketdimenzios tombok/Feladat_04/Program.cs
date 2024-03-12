@@ -1,4 +1,6 @@
-﻿const int MATRIX_SIZE = 4;
+﻿using System.Net.WebSockets;
+
+const int MATRIX_SIZE = 4;
 
 int[,] matrix = new int[MATRIX_SIZE, MATRIX_SIZE];
 
@@ -19,6 +21,8 @@ for (int i = 0; i < MATRIX_SIZE; i++)
     Console.WriteLine();
 }
 
+Console.WriteLine();
+
 int sum = 0;
 
 for (int i = 0; i < MATRIX_SIZE; i++)
@@ -27,11 +31,12 @@ for (int i = 0; i < MATRIX_SIZE; i++)
     {
         if (j < i)
         {
-            Console.Write(matrix[i, j].PadLeft(4, ' '));
+            Console.Write(matrix[i, j].ToString().PadLeft(4, ' '));
         }
         else
         {
             Console.Write(" ".PadLeft(4, ' '));
         }
     }
+    Console.WriteLine();
 }
