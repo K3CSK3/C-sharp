@@ -1,6 +1,6 @@
 ﻿namespace HttpServices;
 
-public static class BaseService
+public class BaseService
 {
     private static HttpClient httpClient;
     private static JsonSerializerOptions options;
