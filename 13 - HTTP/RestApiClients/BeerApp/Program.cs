@@ -1,1 +1,1 @@
-﻿
+﻿await BeerApp.Menu.Main();
